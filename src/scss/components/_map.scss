@@ -1,0 +1,47 @@
+.map {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+
+    @include tablet {
+      margin: 0 calc(-1 * var(--container-offset));
+    }
+    @include mobile {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+  }
+  &__map {
+    grid-column: 8 span;
+    margin-right: -2rem;
+    background-color: #ccc;
+
+    @include mobile {
+      margin-right: 0;
+      height: 28rem;
+    }
+  }
+  &__contacts {
+    grid-column: 4 span;
+    padding: 5rem;
+    background-color: #0165ff;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+  &__title {
+    color: #fff;
+    margin-bottom: 4rem;
+
+    @include tablet {
+      margin-bottom: 2rem;
+    }
+
+  }
+  &__btn {
+    margin-top: 2rem;
+  }
+}

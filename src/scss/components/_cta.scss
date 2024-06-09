@@ -1,0 +1,80 @@
+.cta {
+  margin-bottom: 12rem;
+
+  @include mobile {
+    margin-bottom: 6rem;
+  }
+  &__container {
+    background-color: #0165ff;
+    border-radius: 2rem;
+    padding: 5rem;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: -6rem;
+      bottom: 0;
+      width: 52rem;
+      height: 28.3rem;
+      background-image: url('./../img/logo.svg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      filter: brightness(4) saturate(0) opacity(0.2);
+
+      @include tablet {
+        width: 40rem;
+        height: 20rem;
+        left: -1rem;
+      }
+      @include mobile {
+        width: 30rem;
+        height: 17rem;
+        bottom: 17rem;
+        transform: translateX(-50%);
+        left: 50%;
+      }
+    }
+  }
+  &__form {
+    width: 100%;
+    max-width: 37rem;
+    flex-shrink: 0;
+  }
+  &__title {
+    color: #fff;
+    margin-bottom: 4rem;
+
+    @include mobile {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+  }
+  &__desc {
+    color: #fff;
+    @include mobile {
+      text-align: center;
+    }
+  }
+  &__content {
+    margin-left: 30rem;
+    max-width: 33.5rem;
+
+    @include tablet {
+      margin-left: 0;
+    }
+    @include mobile {
+      margin-bottom: 2rem;
+    }
+  }
+}

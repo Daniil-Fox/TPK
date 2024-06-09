@@ -1,0 +1,55 @@
+.about {
+  margin-bottom: 10rem;
+
+  @include mobile {
+    margin-bottom: 6rem;
+    margin-top: 4rem;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+
+    @include tablet {
+      align-items: center;
+    }
+    @include mobile {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__image {
+    grid-column: 5 span;
+    padding: 0 7rem;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &__content {
+    grid-column: 7 span;
+    padding-top: 10rem;
+
+    @include tablet {
+      padding-top: 0;
+    }
+    @include mobile {
+      text-align: center;
+    }
+  }
+  &__title {
+    margin-bottom: 4rem;
+    @include mobile {
+      margin-bottom: 2rem;
+    }
+  }
+  &__desc {
+    &:not(:last-child){
+      margin-bottom: 3rem;
+      @include mobile {
+        margin-bottom: 1.3rem;
+      }
+    }
+  }
+}

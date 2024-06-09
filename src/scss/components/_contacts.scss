@@ -1,0 +1,29 @@
+.contacts {
+
+  &__name {
+    display: block;
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+    font-size: 2.4rem;
+    color: #fff;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+  &__text {
+    display: block;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: #fff;
+  }
+  &__city {
+    margin-top: 3rem;
+    max-width: 15rem;
+
+    @include mobile {
+      max-width: unset;
+    }
+  }
+
+}

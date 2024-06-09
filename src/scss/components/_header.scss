@@ -1,0 +1,130 @@
+// ваш код
+.header {
+  position: relative;
+  z-index: 10;
+  padding: 1.5rem 0;
+  background-color: #fff;
+  &__container, &__left, &__right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__logo {
+    display: block;
+    width: 13rem;
+    height: 7rem;
+
+    @include tablet {
+      width: 10rem;
+      height: 5rem;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__container {
+    justify-content: space-between;
+  }
+  &__left {
+    gap: 12rem;
+    justify-content: flex-start;
+
+    @include tablet {
+      gap: 6rem;
+    }
+  }
+  &__burger {
+    display: none;
+    position: relative;
+    z-index: 102;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3rem;
+    height: 2rem;
+
+    position: relative;
+    @include mobile {
+      display: flex;
+    }
+    .line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #000;
+
+      transition: transform .3s ease-out;
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        height: 2px;
+        border-radius: 2px;
+      }
+      &::before {
+        top: 0;
+        transition: transform .3s ease-out;
+      }
+      &::after {
+        bottom: 0;
+        transition: opacity .3s ease-out;
+      }
+    }
+
+    &.active {
+      .line {
+        transform: rotate(135deg);
+        &::before {
+          transform: rotate(-90deg);
+        }
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  &__tel {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    @include mobile {
+      display: none;
+    }
+    svg {
+      width: 1.9rem;
+      height: 1.9rem;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: #000;
+    }
+  }
+
+  &__btn {
+    width: 23.8rem;
+
+    @include mobile {
+      width: auto;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  &__nav {
+      @include mobile {
+        display: none;
+      }
+
+  }
+}

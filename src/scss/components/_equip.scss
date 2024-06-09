@@ -1,0 +1,140 @@
+.equip {
+  position: relative;
+  margin-bottom: 12rem;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: -12rem;
+    width: 50rem;
+    height: 65rem;
+    background-image: url('./../img/map-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__title {
+    margin-bottom: 5rem;
+
+    @include mobile {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 2rem;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.equip-item {
+  min-height: 21rem;
+  padding: 3rem;
+  border-radius: 2rem;
+  background-color: #f7f9fc;
+  overflow: hidden;
+  transition: background-color .3s ease-out;
+  position: relative;
+
+
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: -7rem;
+    top: -4.7rem;
+    height: 21rem;
+    width: 21rem;
+    border-radius: 100%;
+    background-color: #eff3fa;
+
+    transition: background-color .3s ease-out;
+  }
+  &__icon {
+    width: 4.8rem;
+    height: 4.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+    svg {
+      fill: #0165FF;
+      transition: fill .3s ease-out;
+    }
+  }
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+  &__title {
+    display: block;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 125%;
+    color: #000;
+
+    transition: color .3s ease-out;
+  }
+  &__desc {
+    transition: color .3s ease-out;
+  }
+
+  @include hover {
+    background-color: #0165ff;
+    &::before {
+      background-color: #027dff;
+    }
+    .equip-item {
+      &__title {
+        color: #fff;
+      }
+      &__desc {
+        color: #fff;
+      }
+      &__icon {
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    background-color: #0165ff;
+    &::before {
+      background-color: #027dff;
+    }
+    .equip-item {
+      &__title {
+        color: #fff;
+      }
+      &__desc {
+        color: #fff;
+      }
+      &__icon {
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}

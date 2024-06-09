@@ -1,0 +1,53 @@
+.footer {
+  &__top {
+    padding: 1.5rem 0;
+    background-color: #0165ff;
+    @include mobile {
+      display: none;
+    }
+    .nav__link {
+      color: #fff;
+    }
+  }
+
+  &__bottom {
+    background-color: #eff3fa;
+    padding: 1.5rem 0;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 18rem;
+
+    @include tablet {
+      justify-content: space-between;
+      gap: 5rem;
+    }
+    @include mobile {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  &__copy {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 250%;
+    color: #000;
+    opacity: .7;
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+  &__link {
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+:root {
+  --font-family: "Open Sans", sans-serif;
+  --content-width: 130rem;
+  --container-offset: 2rem;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  --light-color: #fff;
+}

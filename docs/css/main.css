@@ -456,6 +456,7 @@ a {
 }
 .hero__container {
   padding: 11rem calc((100% - var(--container-width)) / 2) 16rem;
+  padding-bottom: 32rem;
   background-color: #eff3fa;
   position: relative;
   z-index: 2;
